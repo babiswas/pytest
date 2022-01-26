@@ -1,5 +1,5 @@
 import pytest
-from sample import A
+from sample import A,B
 
 @pytest.mark.skip
 def test_obj():
@@ -27,6 +27,36 @@ def test_gtlt():
    obj2=A(5,1)
    val=obj2<obj1
    assert val==True
+
+
+
+@pytest.mark.subclass
+def test_subclass():
+    obj1=B(3,4)
+    assert isinstance(obj1,A)
+
+@pytest.mark.subclass
+def test_subclass1():
+    obj1=A(5,6)
+    assert isinstance(obj1,B)==False
+
+@pytest.mark.subclass
+def test_subclass2():
+    obj1=B(11,12)
+    assert isinstance(obj1,B)==True
+
+@pytest.mark.subclass
+def test_subclass3():
+   obj2=B(14,15)
+   assert issubclass(B,A)==True
+
+@pytest.mark.subclass
+def test_subclass3():
+   obj2=B(14,15)
+   assert issubclass(A,B)==False
+
+
+
 
 
 
