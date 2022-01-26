@@ -32,21 +32,21 @@ def test_add_exception():
     calc=Calculator(1,"a")
     with pytest.raises(CalculatorError) as context:
        result=calc.addition()
-    assert str(context.value)=="CalculatorError"
+    assert str(context.value)=="Add Error"
 
 @pytest.mark.hello
 def test_subs_exception():
     calc1=Calculator(2,"b")
     with pytest.raises(CalculatorError) as context:
         result=calc1.subs()
-    assert str(context.value)=="CalculatorError"
+    assert str(context.value)=="Subs Error"
 
 @pytest.mark.hello
 def test_div_exception():
     calc2=Calculator(3,"c")
     with pytest.raises(CalculatorError) as context:
          result=calc2.divison()
-    assert str(context.value)=="CalculatorError"
+    assert str(context.value)=="Division Error"
 
 def test_add_all():
     calc=Calculator(1,2)
@@ -57,4 +57,4 @@ def test_add_all_exception():
     calc=Calculator(3,4)
     with pytest.raises(CalculatorError) as context:
          result=calc.add_all(1,2,3,4,"hello","bello")
-    assert str(context.value)=="CalculatorError"
+    assert str(context.value)=="Add all error"

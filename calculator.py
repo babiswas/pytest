@@ -1,6 +1,8 @@
 class CalculatorError(Exception):
+    def __init__(self,str1):
+        self.str1=str1
     def __str__(self):
-        return "CalculatorError"
+        return self.str1
 
 class Calculator:
    def __init__(self,a,b):
@@ -10,7 +12,7 @@ class Calculator:
        try:
           return self.a+self.b
        except TypeError as e:
-          raise CalculatorError
+          raise CalculatorError("Add Error")
 
    def add_all(self,*args):
        try:
@@ -19,20 +21,22 @@ class Calculator:
            sum+=i
          return sum
        except Exception as e:
-         raise CalculatorError
+         raise CalculatorError("Add all error")
            
 
    def subs(self):
        try:
           return self.a-self.b
        except TypeError as e:
-          raise CalculatorError
+          raise CalculatorError("Subs Error")
 
    def divison(self):
        try:
           return self.a//self.b
        except TypeError as e:
-          raise CalculatorError
+          raise CalculatorError("Division Error")
+       except ZeroDivision as e:
+          raise CalculatorError("Division Error")
 
    def add(self):
       return self.a+self.b
