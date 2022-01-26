@@ -46,7 +46,7 @@ def test_div_exception():
     calc2=Calculator(3,"c")
     with pytest.raises(CalculatorError) as context:
          result=calc2.divison()
-    assert str(context.value)=="Division Error"
+    assert str(context.value)=="Input Error"
 
 def test_add_all():
     calc=Calculator(1,2)
@@ -58,3 +58,11 @@ def test_add_all_exception():
     with pytest.raises(CalculatorError) as context:
          result=calc.add_all(1,2,3,4,"hello","bello")
     assert str(context.value)=="Add all error"
+
+
+@pytest.mark.hello
+def test_div_exception():
+    calc2=Calculator(3,0)
+    with pytest.raises(CalculatorError) as context:
+         result=calc2.divison()
+    assert str(context.value)=="Division Error"

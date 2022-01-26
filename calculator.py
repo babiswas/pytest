@@ -34,8 +34,8 @@ class Calculator:
        try:
           return self.a//self.b
        except TypeError as e:
-          raise CalculatorError("Division Error")
-       except ZeroDivision as e:
+          raise CalculatorError("Input Error")
+       except ZeroDivisionError as e:
           raise CalculatorError("Division Error")
 
    def add(self):
