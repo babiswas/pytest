@@ -17,6 +17,24 @@ def test_objsum():
    obj2=A(6,1)
    assert obj1+obj2==14
 
+def test_objsum():
+   obj1=A(8,2)
+   obj2=A(6,1)
+   test=obj1+obj2
+   assert isinstance(test,int)
+
+def test_objsum1():
+   obj1=A("hello",2)
+   obj2=A("bello",1)
+   test=obj1+obj2
+   assert test=="bellohello"
+
+def test_objsum2():
+   obj1=A("hello",2)
+   obj2=A("bello",1)
+   test=obj1+obj2
+   assert isinstance(test,str)==True
+
 def test_subs():
     obj3=A(10,4)
     obj4=A(5,2)
@@ -27,8 +45,6 @@ def test_gtlt():
    obj2=A(5,1)
    val=obj2<obj1
    assert val==True
-
-
 
 @pytest.mark.subclass
 def test_subclass():
