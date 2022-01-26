@@ -12,6 +12,16 @@ class Calculator:
        except TypeError as e:
           raise CalculatorError
 
+   def add_all(self,*args):
+       try:
+         sum=0
+         for i in args:
+           sum+=i
+         return sum
+       except Exception as e:
+         raise CalculatorError
+           
+
    def subs(self):
        try:
           return self.a-self.b
